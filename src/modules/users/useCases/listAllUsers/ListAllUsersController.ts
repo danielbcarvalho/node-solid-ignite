@@ -6,7 +6,9 @@ class ListAllUsersController {
   constructor(private listAllUsersUseCase: ListAllUsersUseCase) {}
 
   handle(request: Request, response: Response): Response {
-    // Complete aqui
+    this.listAllUsersUseCase.execute(request.body);
+
+    return response.status(200);
   }
 }
 

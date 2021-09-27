@@ -6,7 +6,9 @@ class CreateUserController {
   constructor(private createUserUseCase: CreateUserUseCase) {}
 
   handle(request: Request, response: Response): Response {
-    // Complete aqui
+    this.createUserUseCase.execute(request.body);
+
+    return response.status(200);
   }
 }
 
